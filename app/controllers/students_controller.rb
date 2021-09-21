@@ -25,7 +25,7 @@ class StudentsController < ApplicationController
     @student = Student.new(student_params)
     if @student.save
       flash[:notice] = 'Estudante criado com sucesso!'
-      redirect_to students_path
+      redirect_to @student
     else
       render 'new'
     end

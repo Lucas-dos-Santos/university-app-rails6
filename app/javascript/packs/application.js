@@ -17,5 +17,5 @@ ActiveStorage.start();
 $(document).on("turbolinks:load", () => {
   $(".dropdown-trigger").dropdown();
   $(".sidenav").sidenav();
-  $("#fade-target").fadeOut(5000);
+  $("#fade-target").fadeOut(4000);
 });

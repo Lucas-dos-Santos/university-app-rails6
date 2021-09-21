@@ -1,0 +1,17 @@
+  <%= form_for(@student, html: {class: "col s12"}) do |f| %>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.text_field :name, placeholder: "Entre com seu nome completo", autofocus: true %>
+      <%= f.label :name, "Nome" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.email_field :email, placeholder: "Entre com seu email" %>
+      <%= f.label :email %>
+    </div>
+  </div>
+  <button type="submit" class=" grey darken-2 waves-effect waves-light btn">
+    <%= f.submit btn , class: "white-text" %>
+  </button>
+<% end %>

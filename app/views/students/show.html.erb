@@ -7,7 +7,10 @@
         <p>lorem ipsum dolor vade mecum</p>
       </div>
       <div class="card-action">
-        <a href="#">Ver Perfil</a>
+        <%= link_to edit_student_path(@student) do %>
+          <i class="tiny material-icons">create</i>
+          Editar Perfil
+        <% end %>
         <a href="#">Info</a>
       </div>
     </div>

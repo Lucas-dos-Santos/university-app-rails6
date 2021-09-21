@@ -1,4 +1,5 @@
 class StudentsController < ApplicationController
+  before_action :set_student, only: %i[show edit update]
   def index
     @students = Student.all
   end
@@ -7,8 +8,17 @@ class StudentsController < ApplicationController
     @student = Student.new
   end
 
-  def show
-    @student = Student.find(params[:id])
+  def show; end
+
+  def edit; end
+
+  def update
+    if @student.update(student_params)
+      flash[:notice] = 'Dados atualizados com sucesso!'
+      redirect_to @student
+    else
+      render 'edit'
+    end
   end
 
   def create
@@ -22,6 +32,10 @@ class StudentsController < ApplicationController
   end
 
   private
+
+  def set_student
+    @student = Student.find(params[:id])
+  end
 
   def student_params
     params.require(:student).permit(:name, :email)

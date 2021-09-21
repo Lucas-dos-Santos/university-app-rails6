@@ -8,11 +8,21 @@
   <div class="row">
     <div class="input-field col s12">
       <%= f.email_field :email, placeholder: "Entre com seu email" %>
-      <%= f.label :email %>
+      <%= f.label :email, class: "active" %>
     </div>
   </div>
-  <button type="submit" class=" grey darken-2 waves-effect waves-light btn">
-    <%= f.submit btn , class: "white-text" %>
-    <!--  (@student.new_record ? "cadastrar" : "salvar") -->
-  </button>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.password_field :password, placeholder: "Escolha uma senha" %>
+      <%= f.label :password, "Senha", class: "active" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.password_field :password_confirmation, placeholder: "Confirme sua senha" %>
+      <%= f.label :password_confirmation, "Confirmar Senha", class: "active" %>
+    </div>
+  </div>
+  <%= f.button btn , class: "grey darken-2 waves-effect waves-light btn " %>
+  <!--  (@student.new_record ? "cadastrar" : "salvar") -->
 <% end %>

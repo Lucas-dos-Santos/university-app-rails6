@@ -4,12 +4,27 @@
       <div class="card-content white-text ">
         <span class="card-title">Nome: <%= @student.name %></span>
         <p >Email: <%= @student.email %></p>
-        <p>lorem ipsum dolor vade mecum</p>
+        <p>
+          Cursos Inscritos:
+          <ul>
+            <% if @student.courses.empty? %>
+              <li>Nenhum Curso</li>
+            <% else %>
+              <% @student.courses.each do |course| %>
+                <li>
+                  <%= course.name %>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </p>
       </div>
       <div class="card-action">
-        <%= link_to edit_student_path(@student) do %>
-          <i class="tiny material-icons">create</i>
-          Editar Perfil
+        <% if current_user == @student %>
+          <%= link_to edit_student_path(@student) do %>
+            <i class="tiny material-icons">create</i>
+            Editar Perfil
+          <% end %>
         <% end %>
         <a href="#">Info</a>
       </div>
